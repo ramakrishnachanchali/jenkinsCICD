@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @SpringBootApplication
 @Controller
-public class StartApplication {
+public class Application {
 
     @GetMapping("/")
     public String index(final Model model) {
@@ -18,7 +18,7 @@ public class StartApplication {
     }
 
     public static void main(String[] args) {
-        SpringApplication.run(StartApplication.class, args);
+        SpringApplication.run(Application.class, args);
     }
 
 }
