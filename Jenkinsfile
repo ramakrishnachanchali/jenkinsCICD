@@ -11,7 +11,7 @@ pipeline {
       steps {
         sh 'ls -ltr'
         // build the project and create a JAR file
-        sh 'maven clean package'
+        sh 'mvn clean package'
       }
     }
   }
