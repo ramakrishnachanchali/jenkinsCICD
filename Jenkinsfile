@@ -17,5 +17,12 @@ pipeline {
         sh 'mvn clean package'
       }
     }
+    stage('Build and push the docker image'){
+      steps{
+          script{
+            sh 'docker build -t basic_image:1.0 .'
+          }
+      }
+    }
   }
 }
