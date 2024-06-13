@@ -20,7 +20,6 @@ pipeline {
     stage('Build and push the docker image'){
       steps{
           script{
-            args '--user root -v /var/run/docker.sock:/var/run/docker.sock' // mount Docker socket to access the host's Docker daemon
             sh 'docker build -t basic_image:1.0 .'
           }
       }
