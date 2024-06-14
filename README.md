@@ -1,4 +1,4 @@
-# Steps to setup for Jenkins CICD
+# Steps to setup for Jenkins CICD.
 
 ### Pre-Requisites
 
