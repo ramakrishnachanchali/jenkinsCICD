@@ -17,9 +17,20 @@ pipeline {
         sh 'mvn clean package'
       }
     }
+    stage('Sonar Scan'){
+      environment{
+        SONAR_URL = '192.168.29.66:9000/'
+      }
+      steps{
+        withCredentials([string(credentialsId: 'sonar', variable: 'SONAR_AUTH_TOKEN')]) {
+        sh 'cd mvn sonar:sonar -Dsonar.login=$SONAR_AUTH_TOKEN -Dsonar.host.url=${SONAR_URL}'
+        }
+      }
+    }
     stage('Build and push the docker image'){
       steps{
           script{
+            sh 'whoami'
             sh 'docker build -t basic_image:1.0 .'
           }
       }
